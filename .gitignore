@@ -1,3 +1,6 @@
 #Die binarys brauchen wir nicht, aber den folder
 bin/usr/bin/*
 !bin/usr/bin/.gitkeep
+
+#Da kommen Name und Telefon rein - das wird auf garkeinen Fall gepushed
+.gitconfig
