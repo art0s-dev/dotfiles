@@ -2,5 +2,5 @@
 bin/usr/bin/*
 !bin/usr/bin/.gitkeep
 
-/git.gitconfig
-!/git.gitconfig.template
+.gitconfig
+!.gitconfig.template
