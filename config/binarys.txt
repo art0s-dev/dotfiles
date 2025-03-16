@@ -1,0 +1,2 @@
+https://github.com/cryptaliagy/tomlq/releases/download/0.2.2/tomlq.amd64.tgz
+https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz

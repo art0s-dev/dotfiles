@@ -1,0 +1,2 @@
+#Flatpaks
+io.gitlab.librewolf-community #librewolf als browser

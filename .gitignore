@@ -1,0 +1,3 @@
+#Die binarys brauchen wir nicht, aber den folder
+bin/usr/bin/*
+!bin/usr/bin/.gitkeep

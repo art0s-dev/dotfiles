@@ -1,0 +1,31 @@
+#Basispakete	 ---
+git		 #versionskontrolle generell
+stow		 #management der dotfiles
+flatpak		 #Alles, was NICHT über debian geht.(eigene liste)
+
+#Generelle tools ---
+htop		 #prozesse killn und systemleistung gucken
+alacritty	 #Terminal bei dem keine X11 Probleme mit Emacs belegung und alt auftauchen
+tealdeer	 #tldr tutorial manpages
+
+#Textarbeit	 ---
+emacs		 #Muss mindestens version 27 haben!
+
+#Desktop 	 ---
+xorg		 #Wird beides gebraucht
+xinit		 #--xorg
+i3		 #Die desktopumgebung meines herzens
+rofi		 #Der runner meines vertrauens - sorry suckless tools
+
+#Sound		 ---
+pipewire-audio	 #und die ganzen dependencies ...
+wireplumber	 
+pipewire-pulse   
+libspa-0.2-bluetooth
+pulseaudio-utils
+pavucontrol	 #die absolute sound standart gui für alle fälle.
+
+#Bluetooth
+bluez-firmware
+bluetooth
+blueman		 #das absolute default gui tool für bluetooth
