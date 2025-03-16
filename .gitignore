@@ -2,5 +2,5 @@
 bin/usr/bin/*
 !bin/usr/bin/.gitkeep
 
-#Da kommen Name und Telefon rein - das wird auf garkeinen Fall gepushed
-.gitconfig
+/git.gitconfig
+!/git.gitconfig.template
