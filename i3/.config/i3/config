@@ -1,14 +1,35 @@
 set $mod Mod4
+
 font pango:monospace 8
+
 #autostart
 exec --no-startup-id dex --autostart --environment i3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#F12
+bindsym XF86AudioRaiseVolume exec --no-startup-id \
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ \
+	&& dunstify "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ )" -t 650
+
+#F11
+bindsym XF86AudioLowerVolume exec --no-startup-id \
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- \
+	&& dunstify "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ )" -t 650
+
+#F10
+bindsym XF86AudioMute exec --no-startup-id \
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle \
+	&& dunstify "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ )" -t 650
+
+#F8
+bindsym F8 exec --no-startup-id \
+	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle \
+	&& dunstify "Microphone Muted" "$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ )" -t 650
+
+#F8
+bindsym F7 exec --no-startup-id maim -s ~/Pictures/Screenshots/"$(date -u '+%d.%m.%y %H:%M:%S')".png
 
 #Mouse+$mod to drag floating windows
 floating_modifier $mod

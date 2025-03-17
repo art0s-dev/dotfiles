@@ -10,12 +10,17 @@ tealdeer	 #tldr tutorial manpages
 
 #Textarbeit	 ---
 emacs		 #Muss mindestens version 27 haben!
+libxapp-gtk3-module #verhindert nen copy und paste fehler bei emacs
 
 #Desktop 	 ---
 xorg		 #Wird beides gebraucht
 xinit		 #--xorg
 i3		 #Die desktopumgebung meines herzens
 rofi		 #Der runner meines vertrauens - sorry suckless tools
+maim		 #minimal screenshot tool
+dunst 		 #pop messages
+mc 		 #MIDNIGHT FUCKING COMMANDER!!!!
+geeqie		 #Dependency fürs bilder angucken im MC
 
 #Sound		 ---
 pipewire-audio	 #und die ganzen dependencies ...
@@ -26,6 +31,7 @@ pulseaudio-utils
 pavucontrol	 #die absolute sound standart gui für alle fälle.
 
 #Bluetooth
+firmware-realtek #n paar nonfree bins für bluetooth usb sticks die ich benutze
 bluez-firmware
 bluetooth
 blueman		 #das absolute default gui tool für bluetooth

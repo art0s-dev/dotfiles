@@ -127,3 +127,5 @@ alias emacs="emacs -nw"
 
 #Für alacritty
 export XDG_CONFIG_HOME="$HOME/.config"
+export TERM=alacritty
+export GTK_MODULES="gdk-xim" #Fix für Emacs flackern bei copy

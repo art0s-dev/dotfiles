@@ -41,6 +41,8 @@ function install_deb_packages(){
     sudo apt remove firefox-esr #librewolf flatpak als ersatz 
     sudo apt remove suckless-tools #zusätzliche deps von i3-wird nicht genutzt
 
+    mkdir -p ~/Pictures/Screenshots #maim nutzt diesen Pfad
+    
     sudo apt autoremove #Zum Schluss räumen wir nochmal auf
     success "Fertig mit Debian Paketen"
 }

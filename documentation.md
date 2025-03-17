@@ -34,39 +34,35 @@ eventuell eingerichtet werden. Das rice wird auf mehreren virtuellen Maschinen a
 portabilität getestet
 
 ## Installation
--> ssh-keygen durchlaufen lassen
--> bei github den public key hinzufügen
--> dotfiles ziehen 
+-> dotfiles ziehen
+-> .gitconfig.template in . gitconfig ändern
 -> in der .gitconfig Emailadresse eintragen
 -> und init.sh starten (vorher noch ausführbar machen?)
 -> nach dem Installieren der Dotfiles init einmal neustarten wegen pipewire
 -> Danach die Init_after_Reboot starten. Die enthält die ganzen inti deamons und so
--> mit diesem wunderschönen Befehl aus dem Debian Handbuch einmal prüfen, ob der ganze bums installiert ist
+
+## Debug Info für Sound
+mit diesem wunderschönen Befehl aus dem Debian Handbuch einmal prüfen, ob der ganze bums installiert ist
 > LANG=C pactl info | grep '^Server Name'
--> und einmal checken ob der wireplumber läuft
+und einmal checken ob der wireplumber läuft
+> systemctl status wireplumber
+> Wenn er NICHT läuft einmal enablen.
 > systemctl --user --now enable wireplumber.service
 
+## Debug Info für Bluetooth
+Wenn Bluetooth nicht läuft 
+1) ist der usbstick drin und ist der passthru (wenn es einen gibt) eingerichtet?
+2) läuft der deamonjob über systemd? 
+3) Was sagt die `sudo dmesg | grep blue` ausgabe?
+4) Erkennt Bluetoothctl den controller?
+
 ## TODO's
-- bluetooth muss noch laufen
-- screenshot tool muss ballern
-
-- Alle Tasten müssen funktionalität haben
-  - Lauter
-  - Leister
-  - Ton aus
-  - Play (wie auch immer ich das belegen will)
-  - Mikrofon cutton
-  - Screenshot
-  - Was auch immer ich auf den smiley button legen will
-  - Was auch immer ich auf den Comm button legen will
-  - und die F4 ist noch frei (Hilfe Keybind für alle Tastaturbelegungen????)
-
 Wünsche für die Zukunft
 In da Future:
 - Auflösung deklarativ klären können
-- einfaches tool für bluetooth geräte (tui?)
 - skript für usbstick verwenden (ja dann auch microsoft shit einbinden)
 - backports für debian stable nutzen können. -> amdgpu
+ODER einfach die Treiber runterladen und einbinden?
 (ich will nicht lange rumfummeln, weil ich will dass die graka sofort läuft...) alternativ kann ich ja auch n skript schreiben, was mit die amdgpu einfach ausm aktuellen kernel zieht und dann da reinpackt.
 
 Kommt dann gaaaanz am Ende (Wenn überhaupt):
@@ -97,3 +93,9 @@ Comfortfeatures für emacs:
 - emacs daemon irgendwie einrichten (deamonjob bei systemstart? und bash emacs gg emacsclient austauschen)
   -> vllt nen kürzel oder so eintragen???
 -> fuzzyfind für files im aktuellen projekt 
+
+- Alle Tasten müssen funktionalität haben
+  - Play (wie auch immer ich das belegen will)youtube oder spotify in der regel
+  - Was auch immer ich auf den smiley button legen will
+  - Was auch immer ich auf den Comm button legen will
+  - und die F4 ist noch frei (Hilfe Keybind für alle Tastaturbelegungen????)
