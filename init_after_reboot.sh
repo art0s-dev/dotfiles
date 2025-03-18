@@ -17,3 +17,4 @@ function init_deamonjobs(){
 info "Starte Init after Reboot"
 init_deamonjobs
 success "Zusätzliche init fertig"
+

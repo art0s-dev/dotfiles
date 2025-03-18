@@ -10,7 +10,6 @@ tealdeer	 #tldr tutorial manpages
 
 #Textarbeit	 ---
 emacs		 #Muss mindestens version 27 haben!
-libxapp-gtk3-module #verhindert nen copy und paste fehler bei emacs
 
 #Desktop 	 ---
 xorg		 #Wird beides gebraucht
