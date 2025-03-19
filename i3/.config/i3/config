@@ -29,7 +29,8 @@ bindsym F8 exec --no-startup-id \
 	&& dunstify "Microphone Muted" "$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ )" -t 650
 
 #F8
-bindsym F7 exec --no-startup-id maim -s ~/Pictures/Screenshots/"$(date -u '+%d.%m.%y %H:%M:%S')".png
+bindsym F7 exec --no-startup-id \
+	maim -s ~/Pictures/Screenshots/"$(date -u '+%d.%m.%y %H:%M:%S')".png
 
 #Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -39,8 +40,10 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 #kill focused window
 bindsym ctrl+Shift+w kill
+
 #start dmenu replacement
-bindsym $mod+space exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+space exec --no-startup-id \
+	rofi -modi drun -show drun -terminal alacritty
 
 #keybinds focus:
 bindsym $mod+Left focus left
@@ -113,7 +116,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Really Kill i3?.' -B 'KILL!' 'i3-msg NOPE!'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

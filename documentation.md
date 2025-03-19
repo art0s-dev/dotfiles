@@ -79,7 +79,6 @@ beim arbeiten
 
 #### Rice auf ner 2ten VM testen
 - Portabilität
-- Bugs fixen (emacs copy pasta bug)
 
 ### KANN:
 - Generelle gestaltung (Monokai 4 everyone?)
@@ -89,8 +88,6 @@ beim arbeiten
   -> (eine font für alles -> einmal in mono für terminal und einmal normal für alles andere
 - conky im Hintergrund des workspaces rechts
 - Tägliche  todos im Hintergrund des workspaces links
-- emacs einträge außer terminal für rofi filtern + uxterm und xterm
-- emacs terminal immer mit alacritty starten, wenn über rofi
 - die schrift von rofi könnte kleiner 
 
 #### Confortfeatures für Emacs:
@@ -104,7 +101,6 @@ beim arbeiten
   - treemacs -> öffne in tab, wenn nicht schon vorhanden
   - nächster tab
   - vorheriger tab
-- springe zu paketliste
 -> fuzzyfind für files im aktuellen projekt 
 
 #### Alle Tasten müssen funktionalität haben
