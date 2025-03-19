@@ -1,0 +1,8 @@
+[Unit]
+Description=Emacs Deamon Job
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/emacs --debug-init --fg-daemon
+Restart=always
+

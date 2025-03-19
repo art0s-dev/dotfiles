@@ -65,17 +65,33 @@ function init_stow(){
     log "Folgende stow Configs gefunden: $confs"
     stow $confs
 
-    #die beiden fügen die symlinks am rootsys hinzu
+    #die hier fügen die symlinks am rootsys hinzu
     sudo stow -v -t / xorg 
     sudo stow -v -t / bin
+
+    #Die eingebundenen Systemd services müssen auch geladen werden
+    #Systemd liest userprozesse sowieso über die .config...
+    systemctl --user daemon-reexec #neu laden
+    systemctl --user daemon-reload
+
+    #TODO mach ma ne schleife draus und lies das alles dynamisch aus...
+    systemctl --user enable emacsd.service
+    systemctl --user start emacsd.service
+    
     success "Fertig mit Stow"
 }
 
 #callflow
 info "Starte Initskript"
-#install_static_binarys -> funktioniert grad wegen netzwerk nicht
-install_deb_packages
-install_flatpaks
-init_stow
+
+if [ "$1" = "--stow" ]; then
+    init_stow
+else  
+    install_static_binarys
+    install_deb_packages
+    install_flatpaks
+    init_stow
+fi
+
 success "Init abgeschlossen - Bitte Reboot"
 

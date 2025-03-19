@@ -21,7 +21,8 @@ und dann im ordnerverzeichnis eingebunden werden
 Das initskript macht dann den rest
 
 > Hinweis: Wenn die Emacs initskripte angepasst werden 
-> muss jedes mal das initskript neugestartet werden!
+> muss jedes mal das initskript mit --stow neugestartet werden,
+> weil das die systemd jobs einrichtet und aktualisiert.
 
 ## Binarys
 Manchmal braucht man statische binarys, die in debian testing sind oder in unstable.
@@ -56,16 +57,31 @@ Wenn Bluetooth nicht läuft
 3) Was sagt die `sudo dmesg | grep blue` ausgabe?
 4) Erkennt Bluetoothctl den controller?
 
-## TODO's
-Wünsche für die Zukunft
-In da Future:
-- Auflösung deklarativ klären können
-- skript für usbstick verwenden (ja dann auch microsoft shit einbinden)
-- backports für debian stable nutzen können. -> amdgpu
-ODER einfach die Treiber runterladen und einbinden?
-(ich will nicht lange rumfummeln, weil ich will dass die graka sofort läuft...) alternativ kann ich ja auch n skript schreiben, was mit die amdgpu einfach ausm aktuellen kernel zieht und dann da reinpackt.
+## Debug Info für Emacsclient
+Geb dir einmal das journalctl aus und schau, was er sagt.
+Der Dienst muss bei systemd verlinkt werden, dann muss da n reload erfolgen
+und dann sollte es eigentlich gehen. sonst nochmal durchdebuggen.
+> Ich hab als temporären fix erstmal einen restart befehl in die xinit gelegt. 
+> Damit is der daemon wenigsten an, wenn ich den ganzen haufen hier starte.
 
-Kommt dann gaaaanz am Ende (Wenn überhaupt):
+## TODO's
+Die Todos sind nach wichtigkeit sortiert.
+Ich fange oben an und erledige die stück für stück.
+Sobald ich bei den KANN sachen bin, mach ich ne Picking liste draus und nehme mir dann einfach
+die Ideen, die sich mir als "Wichtig" erscheinen in dem Moment oder was mir am meisten Schnelligkeit gibt,
+beim arbeiten
+
+### MUSS
+- mounting skript für usbstick verwenden (ja dann auch microsoft shit einbinden) - will die backup daten haben
+  -> mach ne tar.gz dann aus allen daten.
+  
+### SOLLTE:
+
+#### Rice auf ner 2ten VM testen
+- Portabilität
+- Bugs fixen (emacs copy pasta bug)
+
+### KANN:
 - Generelle gestaltung (Monokai 4 everyone?)
 - gtk theme für pavucontrol und für blueman
 - i3 statusbar gegen was gescheites austauschen
@@ -77,7 +93,7 @@ Kommt dann gaaaanz am Ende (Wenn überhaupt):
 - emacs terminal immer mit alacritty starten, wenn über rofi
 - die schrift von rofi könnte kleiner 
 
-Comfortfeatures für emacs:
+#### Confortfeatures für Emacs:
 - search and replace (all)
 - Treemacs Keybinds (wenn in Treemacs)
    - treemacs neuer ordner
@@ -89,13 +105,23 @@ Comfortfeatures für emacs:
   - nächster tab
   - vorheriger tab
 - springe zu paketliste
-- springe beim öffnen von dateien (wenn ich emacs x.sh) aufgemacht habe direkt in den buffer rein
-- emacs daemon irgendwie einrichten (deamonjob bei systemstart? und bash emacs gg emacsclient austauschen)
-  -> vllt nen kürzel oder so eintragen???
 -> fuzzyfind für files im aktuellen projekt 
 
-- Alle Tasten müssen funktionalität haben
+#### Alle Tasten müssen funktionalität haben
   - Play (wie auch immer ich das belegen will)youtube oder spotify in der regel
   - Was auch immer ich auf den smiley button legen will
   - Was auch immer ich auf den Comm button legen will
   - und die F4 ist noch frei (Hilfe Keybind für alle Tastaturbelegungen????)
+
+### Würde
+> Wenn ich von Obsidian auf Emacs Org Mode umsteigen will, sollte ich 
+> Org mode installieren und das dann auch lernen
+
+Wenn ich demnächst Rust lernen will:
+> Emacs einrichten, sodass ich damit ohne Probleme Rust programmieren kann
+
+ Rice auf Hardware Testen (ganz zum schluss)
+- Funktioniert das mit Xrandr so oder muss ich das nochmal anpassen?
+- werden alle treiber erkannt?
+- amdgpu stuff runterladen und einbinden
+

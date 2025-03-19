@@ -1,2 +1,7 @@
 #Flatpaks
-io.gitlab.librewolf-community #librewolf als browser
+io.gitlab.librewolf-community               #librewolf als browser
+com.spotify.Client
+com.discordapp.Discord
+com.valvesoftware.Steam
+net.lutris.Lutris
+

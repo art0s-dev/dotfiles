@@ -3,3 +3,4 @@ git
 emacs
 i3
 alacritty
+systemd

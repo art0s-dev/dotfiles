@@ -20,6 +20,7 @@ maim		 #minimal screenshot tool
 dunst 		 #pop messages
 mc 		 #MIDNIGHT FUCKING COMMANDER!!!!
 geeqie		 #Dependency fürs bilder angucken im MC
+xclip		 #Wird für emacs benötigt
 
 #Sound		 ---
 pipewire-audio	 #und die ganzen dependencies ...
