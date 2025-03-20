@@ -31,16 +31,15 @@ und binde die über stow hinterher ein
 
 ## Hinweis zur Portabilität
 Wenn die dotfiles auf einer VM getestet werden muss ein passthru für bluetooth 
-eventuell eingerichtet werden. Das rice wird auf mehreren virtuellen Maschinen auf 
-portabilität getestet
+eventuell eingerichtet werden. Das rice ist auf mehreren virtuellen Maschinen auf 
+portabilität getestet. Vor allem auf Debian 12 stable.
 
 ## Installation
--> dotfiles ziehen
--> .gitconfig.template in . gitconfig ändern
--> in der .gitconfig Emailadresse eintragen
--> und init.sh starten (vorher noch ausführbar machen?)
--> nach dem Installieren der Dotfiles init einmal neustarten wegen pipewire
--> Danach die Init_after_Reboot starten. Die enthält die ganzen inti deamons und so
+- dotfiles per git clone [REPO URL] ziehen
+-  `cat .gitconfig.template >> .gitconfig` erstellen und name / Emailadresse eintragen
+- und init.sh starten
+- nach dem Installieren der Dotfiles init einmal neustarten wegen pipewire
+- Danach die Init_after_Reboot starten. Die enthält die ganzen inti deamons und so
 
 ## Debug Info für Sound
 mit diesem wunderschönen Befehl aus dem Debian Handbuch einmal prüfen, ob der ganze bums installiert ist
@@ -63,61 +62,3 @@ Der Dienst muss bei systemd verlinkt werden, dann muss da n reload erfolgen
 und dann sollte es eigentlich gehen. sonst nochmal durchdebuggen.
 > Ich hab als temporären fix erstmal einen restart befehl in die xinit gelegt. 
 > Damit is der daemon wenigsten an, wenn ich den ganzen haufen hier starte.
-
-## TODO's
-Die Todos sind nach wichtigkeit sortiert.
-Ich fange oben an und erledige die stück für stück.
-Sobald ich bei den KANN sachen bin, mach ich ne Picking liste draus und nehme mir dann einfach
-die Ideen, die sich mir als "Wichtig" erscheinen in dem Moment oder was mir am meisten Schnelligkeit gibt,
-beim arbeiten
-
-### MUSS
-- mounting skript für usbstick verwenden (ja dann auch microsoft shit einbinden) - will die backup daten haben
-  -> mach ne tar.gz dann aus allen daten.
-  
-### SOLLTE:
-
-#### Rice auf ner 2ten VM testen
-- Portabilität
-
-### KANN:
-- Generelle gestaltung (Monokai 4 everyone?)
-- gtk theme für pavucontrol und für blueman
-- i3 statusbar gegen was gescheites austauschen
-- Schriftarten anpassen überall 
-  -> (eine font für alles -> einmal in mono für terminal und einmal normal für alles andere
-- conky im Hintergrund des workspaces rechts
-- Tägliche  todos im Hintergrund des workspaces links
-- die schrift von rofi könnte kleiner 
-
-#### Confortfeatures für Emacs:
-- search and replace (all)
-- Treemacs Keybinds (wenn in Treemacs)
-   - treemacs neuer ordner
-   - treemacs neue datei
-   - treemacs datei/ordner löschen
-- nächster paragraph
-- tabs nutzen
-  - treemacs -> öffne in tab, wenn nicht schon vorhanden
-  - nächster tab
-  - vorheriger tab
--> fuzzyfind für files im aktuellen projekt 
-
-#### Alle Tasten müssen funktionalität haben
-  - Play (wie auch immer ich das belegen will)youtube oder spotify in der regel
-  - Was auch immer ich auf den smiley button legen will
-  - Was auch immer ich auf den Comm button legen will
-  - und die F4 ist noch frei (Hilfe Keybind für alle Tastaturbelegungen????)
-
-### Würde
-> Wenn ich von Obsidian auf Emacs Org Mode umsteigen will, sollte ich 
-> Org mode installieren und das dann auch lernen
-
-Wenn ich demnächst Rust lernen will:
-> Emacs einrichten, sodass ich damit ohne Probleme Rust programmieren kann
-
- Rice auf Hardware Testen (ganz zum schluss)
-- Funktioniert das mit Xrandr so oder muss ich das nochmal anpassen?
-- werden alle treiber erkannt?
-- amdgpu stuff runterladen und einbinden
-

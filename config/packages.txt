@@ -18,9 +18,8 @@ i3		 #Die desktopumgebung meines herzens
 rofi		 #Der runner meines vertrauens - sorry suckless tools
 maim		 #minimal screenshot tool
 dunst 		 #pop messages
-mc 		 #MIDNIGHT FUCKING COMMANDER!!!!
-geeqie		 #Dependency fürs bilder angucken im MC
 xclip		 #Wird für emacs benötigt
+gnome-commander  #Filemanager MC mit GUI in eins + File viewer!
 
 #Sound		 ---
 pipewire-audio	 #und die ganzen dependencies ...

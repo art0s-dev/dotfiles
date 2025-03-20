@@ -61,6 +61,9 @@ function install_flatpaks(){
 
 function init_stow(){
     info "Initialisiere Stow Files"
+
+    rm ~/.bashrc # wir ersetzen die durch unsere
+
     confs=$(cat $configdir/stowfolders.txt)
     log "Folgende stow Configs gefunden: $confs"
     stow $confs
