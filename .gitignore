@@ -4,3 +4,10 @@ bin/usr/bin/*
 
 .gitconfig
 !.gitconfig.template
+
+#Den Berechneten krams aus emacs brauch ich nicht
+emacs/.emacs.d/.cache/
+emacs/.emacs.d/.lsp-session-v1
+emacs/.emacs.d/auto-save-list/
+emacs/.emacs.d/eln-cache/
+emacs/.emacs.d/elpa/

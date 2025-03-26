@@ -1,18 +1,8 @@
 # TODO
-
-## WICHTIG
-- emacs als Entwicklungsumgebung für Rust einrichten
-
-## RELEVANT
-- gnome-commander richtig einrichten
-- search and replace (all)
-- emacs tabnutzung
-- tastaturbelegung komplettieren
-
-## UNWICHTIG
-- Fancythings, Gestaltung
-
-----------
+- GDB und shell rechts in emacs, sodass ich immer das Projekt kontrollieren kann
+- Autocomplete mit strg + leertaste
+- Für nen guten Commit einfach die emacs folder dadrunter ignorieren aber meine changes committen
+- Das Rice einmal als komplette fedora variante schreiben
 
 ## IDEEN SPEICHER
 
